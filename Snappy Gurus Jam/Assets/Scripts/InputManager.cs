@@ -15,7 +15,7 @@ namespace SB
         public bool InteractButton { get; private set; }
 
         [SerializeField] private PlayerInput playerInput;
-
+        
         private InputActionMap _inputActionMap;
         private InputAction _moveAction;
         private InputAction _lookAction;
