@@ -17,12 +17,16 @@ public class PlayerController : MonoBehaviour
    
    private const float _walkSpeed = 2;
    private const float _runSpeed = 6;
-  
 
    private void Start()
    {
       _rigidbody = GetComponent<Rigidbody>();
       _inputManager = GetComponent<InputManager>();
+   }
+
+   private void Update()
+   {
+      Debug.Log(_inputManager.InteractButton);
    }
 
    private void FixedUpdate()
