@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Numerics;
 using SB;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
+using Vector3 = UnityEngine.Vector3;
 
 public class PlayerCameraController : MonoBehaviour
 {
@@ -32,7 +35,8 @@ public class PlayerCameraController : MonoBehaviour
         _xRotation = Mathf.Clamp(_xRotation, upperLimit, bottomLimit);
 
         mainCamera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
-        _rigidbody.MoveRotation(_rigidbody.rotation * Quaternion.Euler(0, Mouse_X * mouseSensitivity * Time.smoothDeltaTime, 0));
+        //_rigidbody.MoveRotation(_rigidbody.rotation * Quaternion.Euler(0, Mouse_X * mouseSensitivity * Time.smoothDeltaTime, 0));
+        transform.Rotate(Vector3.up * _inputManager.Look.x);
     }
    
    
