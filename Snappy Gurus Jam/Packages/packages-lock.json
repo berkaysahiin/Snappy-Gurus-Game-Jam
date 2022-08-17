@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "com.mb.patterns": {
-      "version": "file:D:/MertPackages/MB_UnityPackages/MB_PatternsPackage",
+      "version": "file:C:/Users/berka/Downloads/MB_PatternsPackage/MB_PatternsPackage",
       "depth": 0,
       "source": "local",
       "dependencies": {}
