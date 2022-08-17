@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
 {
    private Rigidbody _rigidbody;
    private InputManager _InputManager;
+
+   private const float _walkSpeed = 2;
+   private const float _runSpeed = 6;
 }
 
 public class PlayerAnimation
