@@ -9,35 +9,41 @@ public class PlayerCameraController : MonoBehaviour
 {
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform mainCamera;
-    [SerializeField] private float upperLimit;
-    [SerializeField] private float bottomLimit;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private Transform orientation;
 
-    private Rigidbody _rigidbody;
+    private InputManager _inputManager;
+
     private float _xRotation;
+    private float _xRot;
+    private float _yRot;
 
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+        _inputManager = FindObjectOfType<InputManager>();
     }
 
-    public void MoveCamera(InputManager _inputManager)
+    private void Start()
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
-        
-        var Mouse_X = _inputManager.Look.x;
-        var Mouse_Y = _inputManager.Look.y;
-        mainCamera.position = cameraRoot.position;
-            
-            
-        _xRotation -= Mouse_Y * mouseSensitivity * Time.smoothDeltaTime;
-        _xRotation = Mathf.Clamp(_xRotation, upperLimit, bottomLimit);
-
-        mainCamera.localRotation = Quaternion.Euler(_xRotation, 0 , 0);
-        //_rigidbody.MoveRotation(_rigidbody.rotation * Quaternion.Euler(0, Mouse_X * mouseSensitivity * Time.smoothDeltaTime, 0));
-        transform.Rotate(Vector3.up * _inputManager.Look.x);
     }
-   
-   
+
+    private void LateUpdate()
+    {
+        MoveCamera();
+    }
+
+    public void MoveCamera()
+    {
+        var mouseX = _inputManager.Look.x;
+        var mouseY = _inputManager.Look.y;
+        mainCamera.position = cameraRoot.position;
+
+        _yRot += mouseX;
+        _xRot -= mouseY;
+
+        _xRot = Mathf.Clamp(_xRot, -90f, 90f);
+        transform.rotation = Quaternion.Euler(_xRot, _yRot, 0);
+        orientation.rotation = Quaternion.Euler(0, _yRot, 0);
+    }
 }
