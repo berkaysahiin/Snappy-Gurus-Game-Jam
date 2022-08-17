@@ -622,9 +622,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraRoot: {fileID: 164097890795859809}
   mainCamera: {fileID: 963194228}
-  upperLimit: -40
-  bottomLimit: 70
-  mouseSensitivity: 400
   orientation: {fileID: 1097512921}
 --- !u!1 &1097512920
 GameObject:
@@ -2609,7 +2606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a41e1974c7ae438cb473427456a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedInterpolationConstant: 8.9
   orientation: {fileID: 1097512921}
   playerHeight: 2
   groundDrag: 5

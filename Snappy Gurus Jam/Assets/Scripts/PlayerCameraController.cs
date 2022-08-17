@@ -10,6 +10,9 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform orientation;
+    
+    [SerializeField] private float minClampVal;
+    [SerializeField] private float maxClampVal;
 
     private InputManager _inputManager;
 
@@ -42,7 +45,7 @@ public class PlayerCameraController : MonoBehaviour
         _yRot += mouseX;
         _xRot -= mouseY;
 
-        _xRot = Mathf.Clamp(_xRot, -90f, 90f);
+        _xRot = Mathf.Clamp(_xRot, minClampVal, maxClampVal);
         transform.rotation = Quaternion.Euler(_xRot, _yRot, 0);
         orientation.rotation = Quaternion.Euler(0, _yRot, 0);
     }
