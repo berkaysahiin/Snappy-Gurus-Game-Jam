@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.mb.patterns": {
+      "version": "file:D:/MertPackages/MB_UnityPackages/MB_PatternsPackage",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.17.1",
       "depth": 0,
