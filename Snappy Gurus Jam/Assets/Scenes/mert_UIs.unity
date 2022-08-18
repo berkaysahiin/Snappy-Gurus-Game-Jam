@@ -1048,7 +1048,7 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1750321161}
         m_TargetAssemblyTypeName: SB.PasswordUI, Assembly-CSharp
         m_MethodName: ReadInput
         m_Mode: 5
@@ -1146,6 +1146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0595219da950d2e4cbab3be373dcd276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  password: berkos
 --- !u!1 &1975653112
 GameObject:
   m_ObjectHideFlags: 0
