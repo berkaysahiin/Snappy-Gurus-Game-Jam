@@ -14,6 +14,8 @@ public class PlayerMovementController : MonoBehaviour
    [SerializeField] private float playerHeight;
    [SerializeField] private float groundDrag;
    [SerializeField] private LayerMask groundLayerMask;
+   [SerializeField] private float WalkSpeed = 4f;
+   [SerializeField] private float RunSpeed = 6;
    
    private PlayerAnimationController _playerAnimationController;
    
@@ -24,8 +26,6 @@ public class PlayerMovementController : MonoBehaviour
    private float _speedCoefficient; 
    private bool _grounded;
 
-   private const float WalkSpeed = 4f;
-   private const float RunSpeed = 6;
 
    private void Start()
    {

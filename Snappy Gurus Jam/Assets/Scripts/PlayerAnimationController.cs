@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PlayerAnimationController: MonoBehaviour
 {
-    public Vector2 Velocity;
+    [HideInInspector] public Vector2 Velocity;
     public Animator Animator { get; private set; }
     
     private static readonly int XVelocity = Animator.StringToHash("X_Velocity");

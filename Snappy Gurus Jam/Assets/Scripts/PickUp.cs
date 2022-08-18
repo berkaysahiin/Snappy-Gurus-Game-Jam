@@ -10,7 +10,6 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private Transform orientation;
-    [SerializeField] private float range;
     [SerializeField] private float speed;
 
     private GameObject selectableObject => GetSelectableObject();
@@ -54,6 +53,7 @@ public class PickUp : MonoBehaviour
         
         if (selectableObject != null && CheckSelectableObjectInRange())
         {
+            selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = true;
             selectableObject.transform.position = holdPosition.position;
             selectableObject.transform.rotation = Quaternion.Slerp(selectableObject.transform.rotation, orientation.rotation, speed* Time.smoothDeltaTime);
         }
@@ -61,11 +61,12 @@ public class PickUp : MonoBehaviour
     }
     private void ReleaseObject()
     {
+        selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = false;
         isCurrentlyHolding = false;
     }
 
     private bool CheckSelectableObjectInRange()
     {
-        return (transform.position - selectableObject.transform.position).magnitude < range;
+        return (transform.position - selectableObject.transform.position).magnitude < selectableObject.GetComponent<Pickable>().AllowDistance;
     }
 }
