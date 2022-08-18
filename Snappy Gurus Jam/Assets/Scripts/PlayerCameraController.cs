@@ -10,6 +10,7 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private Transform cameraRoot;
     [SerializeField] private Transform mainCamera;
     [SerializeField] private Transform orientation;
+    [SerializeField] private float sensitivity;
     
     [SerializeField] private float minClampVal;
     [SerializeField] private float maxClampVal;
@@ -35,8 +36,8 @@ public class PlayerCameraController : MonoBehaviour
         var mouseY = InputManager.Look.y;
         mainCamera.position = cameraRoot.position;
 
-        _yRot += mouseX;
-        _xRot -= mouseY;
+        _yRot += mouseX * sensitivity * Time.smoothDeltaTime;
+        _xRot -= mouseY * sensitivity * Time.smoothDeltaTime;
 
         _xRot = Mathf.Clamp(_xRot, minClampVal, maxClampVal);
         transform.rotation = Quaternion.Euler(_xRot, _yRot, 0);
