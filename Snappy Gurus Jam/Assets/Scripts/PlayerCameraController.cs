@@ -15,7 +15,6 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private float minClampVal;
     [SerializeField] private float maxClampVal;
 
-    private float _xRotation;
     private float _xRot;
     private float _yRot;
 
