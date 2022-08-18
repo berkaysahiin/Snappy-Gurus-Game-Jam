@@ -623,6 +623,8 @@ MonoBehaviour:
   cameraRoot: {fileID: 164097890795859809}
   mainCamera: {fileID: 963194228}
   orientation: {fileID: 1097512921}
+  minClampVal: 0
+  maxClampVal: 0
 --- !u!1 &1097512920
 GameObject:
   m_ObjectHideFlags: 0
@@ -661,7 +663,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh39632
+  m_Name: pb_Mesh24882
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2587,6 +2589,8 @@ GameObject:
   - component: {fileID: 5526168652722918975}
   - component: {fileID: 5526168652722918980}
   - component: {fileID: 5526168652722918981}
+  - component: {fileID: 5526168652722918982}
+  - component: {fileID: 5526168652722918983}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -2668,6 +2672,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Velocity: {x: 0, y: 0}
+--- !u!114 &5526168652722918982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526168652722918973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: faba99cfe86348d5ad689ed6d355a370, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraRoot: {fileID: 164097890795859809}
+  mainCamera: {fileID: 963194228}
+  orientation: {fileID: 1097512921}
+  minClampVal: -90
+  maxClampVal: 45
+--- !u!114 &5526168652722918983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5526168652722918973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae1363fc6b44132812f4a847d3e9b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainCamera: {fileID: 963194227}
 --- !u!4 &5571630453376105656
 Transform:
   m_ObjectHideFlags: 0

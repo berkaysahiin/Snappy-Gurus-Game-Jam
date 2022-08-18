@@ -14,16 +14,9 @@ public class PlayerCameraController : MonoBehaviour
     [SerializeField] private float minClampVal;
     [SerializeField] private float maxClampVal;
 
-    private InputManager _inputManager;
-
     private float _xRotation;
     private float _xRot;
     private float _yRot;
-
-    private void Awake()
-    {
-        _inputManager = FindObjectOfType<InputManager>();
-    }
 
     private void Start()
     {
@@ -38,8 +31,8 @@ public class PlayerCameraController : MonoBehaviour
 
     public void MoveCamera()
     {
-        var mouseX = _inputManager.Look.x;
-        var mouseY = _inputManager.Look.y;
+        var mouseX = InputManager.Look.x;
+        var mouseY = InputManager.Look.y;
         mainCamera.position = cameraRoot.position;
 
         _yRot += mouseX;
