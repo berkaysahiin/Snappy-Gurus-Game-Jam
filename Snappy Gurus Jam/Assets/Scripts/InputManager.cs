@@ -9,10 +9,11 @@ namespace SB
 {
     public class InputManager : MonoBehaviour
     {
-        public Vector2 Move { get; private set; }
-        public Vector2 Look { get; private set; }
-        public bool Run { get; private set; }
-        public bool InteractButton { get; private set; }
+        public static Vector2 Move { get; private set; }
+        public static Vector2 Look { get; private set; }
+        public static Vector2 MousePosition { get; private set; }
+        public static bool Run { get; private set; }
+        public static bool InteractButton { get; private set; }
 
         [SerializeField] private PlayerInput playerInput;
         
@@ -21,6 +22,7 @@ namespace SB
         private InputAction _lookAction;
         private InputAction _runAction;
         private InputAction _interactAction;
+        private InputAction _mousePosition;
 
         private void Awake()
         {
@@ -29,6 +31,7 @@ namespace SB
             _lookAction = _inputActionMap.FindAction("Look");
             _runAction = _inputActionMap.FindAction("Run");
             _interactAction = _inputActionMap.FindAction("Interact");
+            _mousePosition = _inputActionMap.FindAction("MousePosition");
 
             _moveAction.performed += OnMove;
             _lookAction.performed += OnLook;
@@ -40,6 +43,9 @@ namespace SB
 
             _interactAction.performed += OnInteract;
             _interactAction.canceled += OnInteract;
+            
+            _mousePosition.performed += OnMouseMove;
+            _mousePosition.canceled += OnMouseMove;
         }
 
         private void OnMove(InputAction.CallbackContext callbackContext)
@@ -60,6 +66,11 @@ namespace SB
         private void OnInteract(InputAction.CallbackContext callbackContext)
         {
             InteractButton = callbackContext.ReadValueAsButton();
+        }
+
+        private void OnMouseMove(InputAction.CallbackContext callbackContext)
+        {
+            MousePosition = callbackContext.ReadValue<Vector2>();
         }
 
         private void OnEnable()
