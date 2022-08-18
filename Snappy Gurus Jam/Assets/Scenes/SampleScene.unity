@@ -2860,6 +2860,8 @@ MonoBehaviour:
   mainCamera: {fileID: 963194227}
   holdPosition: {fileID: 1418392994}
   orientation: {fileID: 1097512921}
+  range: 4
+  speed: 300
 --- !u!4 &5571630453376105656
 Transform:
   m_ObjectHideFlags: 0

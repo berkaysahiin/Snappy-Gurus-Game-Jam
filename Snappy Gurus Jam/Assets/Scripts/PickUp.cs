@@ -10,6 +10,8 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private Transform holdPosition;
     [SerializeField] private Transform orientation;
+    [SerializeField] private float range;
+    [SerializeField] private float speed;
 
     private bool isCurrentlyHolding;
     [CanBeNull] private GameObject selectableObject => GetSelectableObject();
@@ -26,8 +28,6 @@ public class PickUp : MonoBehaviour
         {
             ReleaseObject();
         }
-        
-        print(selectableObject);
     }
 
 
@@ -51,10 +51,10 @@ public class PickUp : MonoBehaviour
     private void CarryObject()
     {
         isCurrentlyHolding = true;
-        if (selectableObject != null)
+        if (selectableObject != null && (transform.position - selectableObject.transform.position).magnitude < range)
         {
             selectableObject.transform.position = holdPosition.position;
-            selectableObject.transform.rotation = orientation.rotation;
+            selectableObject.transform.rotation = Quaternion.Slerp(selectableObject.transform.rotation, orientation.rotation, speed* Time.smoothDeltaTime);
         }
             
     }
