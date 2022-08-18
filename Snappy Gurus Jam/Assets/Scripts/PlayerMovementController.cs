@@ -18,7 +18,6 @@ public class PlayerMovementController : MonoBehaviour
    private PlayerAnimationController _playerAnimationController;
    
    private Rigidbody _rigidbody;
-   private InputManager _inputManager;
    private Vector2 _currentVelocity;
    private Vector3 _moveDir;
 
@@ -32,9 +31,6 @@ public class PlayerMovementController : MonoBehaviour
    {
       _playerAnimationController = GetComponent<PlayerAnimationController>();
       _rigidbody = GetComponent<Rigidbody>();
-      _inputManager = GetComponent<InputManager>();
-
-      _rigidbody.freezeRotation = true;
    }
 
    private void Update()
@@ -54,10 +50,10 @@ public class PlayerMovementController : MonoBehaviour
    
    private void Move()
    {
-      _speedCoefficient = _inputManager.Run ? RunSpeed : WalkSpeed;
-      if (_inputManager.Move == Vector2.zero) _speedCoefficient = 0.1f; 
+      _speedCoefficient = InputManager.Run ? RunSpeed : WalkSpeed;
+      if (InputManager.Move == Vector2.zero) _speedCoefficient = 0.1f; 
       
-      _moveDir = (orientation.forward * _inputManager.Move.y + orientation.right * _inputManager.Move.x);
+      _moveDir = (orientation.forward * InputManager.Move.y + orientation.right * InputManager.Move.x);
       _rigidbody.AddForce(_moveDir.normalized * _speedCoefficient , ForceMode.VelocityChange);
    }
 

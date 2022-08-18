@@ -4,16 +4,9 @@ namespace SB
 {
     public class Interactable : MonoBehaviour
     {
-        private InputManager _inputManager;
-
-        private void Awake()
+        private void OnTriggerStay(Collider _collider)
         {
-            _inputManager = FindObjectOfType<InputManager>();
-        }
-
-        private void OnTriggerStay(Collider collider)
-        {
-            if (_inputManager.InteractButton)
+            if (InputManager.InteractButton)
                 gameObject.SetActive(false);
         }
     }
