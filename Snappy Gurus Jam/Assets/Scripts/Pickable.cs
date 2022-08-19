@@ -7,12 +7,14 @@ public enum ItemType
 {
     GoldenFish,
     Box,
-    Monitor
+    Monitor,
+    Paper,
+    Other 
 }
 
 public class Pickable : MonoBehaviour
 {
-    public ItemType ItemType { get; private set; }
+    public ItemType ItemType;
     public float AllowDistance;
     public bool IsBeingHold { get; set; }
     private Rigidbody _rigidbody;

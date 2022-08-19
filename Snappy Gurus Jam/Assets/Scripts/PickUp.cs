@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using SB;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Cinemachine;
 
 public class PickUp : MonoBehaviour
 {
@@ -11,10 +12,17 @@ public class PickUp : MonoBehaviour
     [SerializeField] private Transform holdPosition;
     [SerializeField] private Transform orientation;
     [SerializeField] private float speed;
+    [SerializeField] private CinemachineVirtualCamera FPCamera;
 
     private GameObject selectableObject => GetSelectableObject();
     private bool isCurrentlyHolding;
     private RaycastHit hit;
+    private Vector3 initialHoldPosition;
+
+    private void Start()
+    {
+        initialHoldPosition = holdPosition.position;
+    }
     
     private void Update()
     {
@@ -28,6 +36,8 @@ public class PickUp : MonoBehaviour
         }
         
         Debug.Log(selectableObject);
+
+        CalculateHoldPositionYCoordinate();
     }
 
     [CanBeNull]
@@ -53,9 +63,16 @@ public class PickUp : MonoBehaviour
         
         if (selectableObject != null && CheckSelectableObjectInRange())
         {
-            selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = true;
+            var pickable = selectableObject.gameObject.GetComponent<Pickable>();
+            pickable.IsBeingHold = true;
+
             selectableObject.transform.position = holdPosition.position;
             selectableObject.transform.rotation = Quaternion.Slerp(selectableObject.transform.rotation, orientation.rotation, speed* Time.smoothDeltaTime);
+
+            if(pickable.ItemType == ItemType.Paper)
+            {
+                selectableObject.transform.LookAt(transform);
+            }
         }
             
     }
@@ -69,5 +86,28 @@ public class PickUp : MonoBehaviour
     private bool CheckSelectableObjectInRange()
     {
         return (transform.position - selectableObject.transform.position).magnitude < selectableObject.GetComponent<Pickable>().AllowDistance;
+    }
+
+    private void CalculateHoldPositionYCoordinate() 
+    {
+        var cameraTransform = FPCamera.transform;
+        var distance = Vector3.Distance(holdPosition.position,FPCamera.transform.position);
+        var degree = -1 * cameraTransform.rotation.eulerAngles.x;
+        var radian =  degree * Mathf.Deg2Rad;
+        var tanValue = Mathf.Tan(radian);
+        var moveValue = distance * tanValue;
+        var targetY = initialHoldPosition.y + moveValue;
+
+        if(targetY > 0.5)
+        {
+            targetY = 0.5f;
+        }
+        if(targetY < -2f) 
+        {
+            targetY = -2f;
+        }
+
+        Vector3 targetPosition = new Vector3(holdPosition.position.x, targetY, holdPosition.position.z);
+        holdPosition.position = targetPosition;
     }
 }
