@@ -10,37 +10,50 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerMovementController : MonoBehaviour
 {
-   [SerializeField] private Transform orientation;
    [SerializeField] private float playerHeight;
    [SerializeField] private float groundDrag;
-   [SerializeField] private LayerMask groundLayerMask;
    [SerializeField] private float WalkSpeed = 4f;
    [SerializeField] private float RunSpeed = 6;
+   [SerializeField] private LayerMask groundLayerMask;
+   [SerializeField] private Transform orientation;
    
    private PlayerAnimationController _playerAnimationController;
    
    private Rigidbody _rigidbody;
+   
    private Vector2 _currentVelocity;
    private Vector3 _moveDir;
 
-   private float _speedCoefficient; 
+   private float _speedCoefficient;
+   
    private bool _grounded;
+   private bool _canMove;
 
+   public bool CanMove
+   {
+      get => _canMove;
+      set => _canMove = value;
+   }
 
    private void Start()
    {
       _playerAnimationController = GetComponent<PlayerAnimationController>();
       _rigidbody = GetComponent<Rigidbody>();
+      _canMove = true;
    }
 
    private void Update()
    {
-      _grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayerMask);
-      
-      _playerAnimationController.Animate(_currentVelocity);
-      SpeedController();
-      
-      _rigidbody.drag = _grounded ? groundDrag : 0.0f;
+      Debug.Log("CAN MOVE:" + _canMove);
+      if (_canMove)
+      {
+         _grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, groundLayerMask);
+         
+         _playerAnimationController.Animate(_currentVelocity);
+         SpeedController();
+         
+         _rigidbody.drag = _grounded ? groundDrag : 0.0f;
+      }
    }
 
    private void FixedUpdate()
@@ -50,11 +63,14 @@ public class PlayerMovementController : MonoBehaviour
    
    private void Move()
    {
-      _speedCoefficient = InputManager.Run ? RunSpeed : WalkSpeed;
-      if (InputManager.Move == Vector2.zero) _speedCoefficient = 0.1f; 
-      
-      _moveDir = (orientation.forward * InputManager.Move.y + orientation.right * InputManager.Move.x);
-      _rigidbody.AddForce(_moveDir.normalized * _speedCoefficient , ForceMode.VelocityChange);
+      if (_canMove)
+      {
+         _speedCoefficient = InputManager.Run ? RunSpeed : WalkSpeed;
+         if (InputManager.Move == Vector2.zero) _speedCoefficient = 0.1f; 
+         
+         _moveDir = (orientation.forward * InputManager.Move.y + orientation.right * InputManager.Move.x);
+         _rigidbody.AddForce(_moveDir.normalized * _speedCoefficient , ForceMode.VelocityChange);
+      }
    }
 
    private void SpeedController()
