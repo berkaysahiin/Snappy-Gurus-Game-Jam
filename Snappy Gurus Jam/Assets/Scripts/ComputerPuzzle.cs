@@ -4,18 +4,24 @@ using System.Collections.Generic;
 using SB;
 using UnityEngine;
 using Cinemachine;
+using JetBrains.Annotations;
+
+public enum PuzzleType
+{
+   Memorizing
+}
 
 public class ComputerPuzzle : MonoBehaviour
 {
    [SerializeField] private CinemachineVirtualCamera FPCamera;
-   [SerializeField] private CinemachineVirtualCamera computerCamera; 
-
+   [SerializeField] private CinemachineVirtualCamera computerCamera;
+   
    private void Start()
    {
       computerCamera.gameObject.SetActive(false);
       FPCamera.gameObject.SetActive(true);
    }
-
+   
    private void OnTriggerStay(Collider other)
    {
       if (!InputManager.InteractButton) return;
@@ -40,4 +46,7 @@ public class ComputerPuzzle : MonoBehaviour
       computerCamera.gameObject.SetActive(false);
       Cursor.lockState = CursorLockMode.Locked;
    }
+  
 }
+
+
