@@ -61,7 +61,8 @@ public class PickUp : MonoBehaviour
     }
     private void ReleaseObject()
     {
-        selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = false;
+        if(selectableObject != null)
+            selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = false;
         isCurrentlyHolding = false;
     }
 
