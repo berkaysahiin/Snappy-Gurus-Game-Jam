@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SB
@@ -9,66 +6,47 @@ namespace SB
     {
         [SerializeField] private float distance;
         [SerializeField] private float camLookRadius;
+        [SerializeField] private float angleValue = 180;
+        [SerializeField] private float additionalAngle = 90;
+        [SerializeField] private float camRotateSpeed = 60;
+        [SerializeField] private Vector2 xzRotVal;
+
         [SerializeField] private GameObject player;
-
-        [SerializeField] private float camRotateSpeed;
-        [SerializeField] private Vector3 rotateVector;
-        
-        [SerializeField] private Vector2 clampXValues;
-        [SerializeField] private Vector2 clampYValues;
-        [SerializeField] private Vector2 clampZValues;
-
-        private bool _initialStart;
         
         private Ray _ray;
         private RaycastHit _hit;
+        private bool _detected = false;
 
-        private void Start()
-        {
-            _initialStart = true;
-        }
+        public bool Detected => _detected;
 
         private void Update()
         {
             CameraLook();
-            // var dist = Vector3.Distance(player.transform.position, transform.position);
-            //
-            // Debug.Log("DIST: "+ dist);
-            // if (dist < camLookRadius)
-            // {
-            //     Debug.Log("IM IN!");
-            //     transform.LookAt(player.transform);
-            //     transform.localEulerAngles += new Vector3(-45, 180, 0);
-            // }
-            // else
-            // {
-            //     Debug.Log("IM OUT!");
-            // }
-            
-            if (_initialStart)
+            var dist = Vector3.Distance(player.transform.position, _hit.point);
+
+            if (dist < camLookRadius)
             {
-                transform.Rotate(rotateVector * camRotateSpeed, Space.World);
+                Debug.Log("IM IN!");
+                _detected = true;
+                transform.LookAt(player.transform);
+                transform.localEulerAngles += new Vector3(-45, 180, 0);
+            }
+            else
+            {
+                Debug.Log("IM OUT!");
             }
 
-            if (transform.rotation.y > clampYValues.x)
-            {
-                transform.Rotate(rotateVector * camRotateSpeed * -1, Space.World);
-                _initialStart = false;
-            }
-            
-            if (transform.rotation.y < clampYValues.y)
-            {
-                transform.Rotate(rotateVector * camRotateSpeed, Space.World);
-            }
+            transform.localEulerAngles = new Vector3(xzRotVal.x, 
+                Mathf.PingPong(Time.time * camRotateSpeed, angleValue) + additionalAngle, xzRotVal.y);
         }
 
         private void CameraLook()
         {
-            Debug.DrawLine(transform.position, transform.forward * -distance, Color.red);
+            Debug.DrawLine(transform.position , transform.forward  * -distance, Color.red);
             
             if (Physics.Raycast(transform.position, transform.forward * -1, out _hit, distance))
             {
-                Debug.Log(_hit.collider.gameObject.name);
+                // Debug.Log(_hit.collider.gameObject.name);
             }
         }
         

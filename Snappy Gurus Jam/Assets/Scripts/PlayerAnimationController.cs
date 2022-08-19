@@ -24,6 +24,4 @@ public class PlayerAnimationController: MonoBehaviour
     {
         Velocity = v2;
     }
-    
-    
 }

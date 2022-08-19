@@ -41,8 +41,7 @@ public class NPCDecisionStates : IDecision
         {
             return KillPlayer();
         }
-        return
-            null;
+        return  null;
     }
 
     private Action KillPlayer()
