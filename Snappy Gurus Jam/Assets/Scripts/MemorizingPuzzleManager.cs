@@ -10,30 +10,43 @@ using UnityEngine.UI;
 
 public class MemorizingPuzzleManager : MonoBehaviour
 {
+    [SerializeField] private float timeBetweenLetters;
+    [SerializeField] private float allowedAnswerTime;
+    [SerializeField] private GameObject startButton; 
+    [SerializeField] private GameObject[] Solutions;
     [SerializeField] private GameObject _puzzleContainer;
     [SerializeField] private GameObject _showcaseButton;
     [SerializeField] private TextMeshProUGUI _text;
-    [SerializeField] private float timeBetweenLetters;
-
-    [SerializeField] private GameObject word_1_solution;
-    private readonly int word_1_solution_last_index = 3;
 
     private int buttonIndex;
+    private int _letterIndex;
     private int _wordIndex;
     private string word;
-    private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSA" };
+    private string endWord = "Behind";
+    private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSY" };
 
     private void Start()
     {
         _showcaseButton.SetActive(false);
         _puzzleContainer.SetActive(false);
-        word_1_solution.SetActive(false);    
+
+        foreach(var solution in Solutions)
+        {
+            solution.SetActive(false);
+        }
+    } 
+
+    private void Update()
+    {
+        print("button index: " + buttonIndex);
+        print("word index: " + _wordIndex);
     }
 
     public void StartPuzzle()
     {
+        startButton.SetActive(false);
         _puzzleContainer.SetActive(true);
-        WORD_1_Showcase();
+        WordShowcase();
     }
 
     public void EndPuzzle()
@@ -47,40 +60,49 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
         if (buttonIndex.ToString() != button.name)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            ReloadScene();
         }
+
         else
         {
-            if (buttonIndex == word_1_solution_last_index)
+            if (buttonIndex == Words[_wordIndex - 1].Length - 1)
             {
-                Debug.Log("weldone");                
+                Solutions[_wordIndex - 1].SetActive(false);
+                buttonIndex = 0;
+                if(!(_wordIndex > Words.Length - 1)) 
+                {
+                    WordShowcase();  
+                }
+                else
+                {
+                    ShowEndText();
+                }
+                                
             }
             else
             {
+                button.GetComponent<Image>().color = Color.green;
                 buttonIndex += 1;
             }
         }
     }
 
-    private void WORD_1_Showcase()
+    private void WordShowcase()
     {
         _showcaseButton.SetActive(true);
         _text.text = "";
-        _wordIndex = 0;
+        _letterIndex = 0;
+        word = Words[_wordIndex];
         
         Sequence _sequence = DOTween.Sequence();
-        
-        _sequence.AppendCallback(ShowcaseLetter);
+        _sequence.AppendCallback(ShowcaseStartText);
         _sequence.AppendInterval(timeBetweenLetters);
 
-        _sequence.AppendCallback(ShowcaseLetter);
-        _sequence.AppendInterval(timeBetweenLetters);
-
-        _sequence.AppendCallback(ShowcaseLetter);
-        _sequence.AppendInterval(timeBetweenLetters);
-
-        _sequence.AppendCallback(ShowcaseLetter);
-        _sequence.AppendInterval(timeBetweenLetters);
+        for(int i=0; i<word.Length; i++) 
+        {
+            _sequence.AppendCallback(ShowcaseLetter);
+            _sequence.AppendInterval(timeBetweenLetters);
+        }
         
         _sequence.PlayForward();
 
@@ -91,14 +113,31 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
     private void ShowcaseLetter()
     {
-        _text.text = Words[0][_wordIndex].ToString();
-        _wordIndex += 1;
+        _text.text = Words[_wordIndex][_letterIndex].ToString();
+        _letterIndex += 1;
     }
 
     private void EndShowCase()
     {
+        Solutions[_wordIndex].SetActive(true);
+        _wordIndex += 1;
         _showcaseButton.SetActive(false);
-        word_1_solution.SetActive(true);
+    }
+
+    private void ReloadScene() 
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    private void ShowcaseStartText() 
+    {
+        _text.text = "Memorize";
+    }
+
+    private void ShowEndText()
+    {
+        _showcaseButton.SetActive(true);
+        _text.text = endWord;
     }
 
    
