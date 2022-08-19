@@ -3,8 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ItemType
+{
+    GoldenFish,
+    Box,
+    Monitor
+}
+
 public class Pickable : MonoBehaviour
 {
+    public ItemType ItemType { get; private set; }
     public float AllowDistance;
     public bool IsBeingHold { get; set; }
     private Rigidbody _rigidbody;
