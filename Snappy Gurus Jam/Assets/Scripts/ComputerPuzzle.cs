@@ -15,7 +15,14 @@ public class ComputerPuzzle : MonoBehaviour
 {
    [SerializeField] private CinemachineVirtualCamera FPCamera;
    [SerializeField] private CinemachineVirtualCamera computerCamera;
-   
+
+   private MemorizingPuzzleManager _memorizingPuzzle;
+
+   private void Awake()
+   {
+      _memorizingPuzzle = FindObjectOfType<MemorizingPuzzleManager>();
+   }
+
    private void Start()
    {
       computerCamera.gameObject.SetActive(false);
@@ -25,7 +32,9 @@ public class ComputerPuzzle : MonoBehaviour
    private void OnTriggerStay(Collider other)
    {
       if (!InputManager.InteractButton) return;
-         EnterComputerPuzzleMode();
+      
+      _memorizingPuzzle.playerCamera = FindObjectOfType<ComputerScreenCamController>();
+      EnterComputerPuzzleMode();
    }
 
    private void OnTriggerExit(Collider other)

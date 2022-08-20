@@ -20,6 +20,8 @@ public class MemorizingPuzzleManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _text;
 
     private NPCController _npc;
+
+    private bool _lose = false;
     
     private int buttonIndex;
     private int _letterIndex;
@@ -28,6 +30,8 @@ public class MemorizingPuzzleManager : MonoBehaviour
     private string endWord = "Behind";
     private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSY" };
 
+    public ComputerScreenCamController playerCamera;
+    
     private void Awake()
     {
         _npc = FindObjectOfType<NPCController>();
@@ -48,6 +52,11 @@ public class MemorizingPuzzleManager : MonoBehaviour
     {
         print("button index: " + buttonIndex);
         print("word index: " + _wordIndex);
+
+        if (_lose)
+        {
+            playerCamera.transform.Rotate(Vector3.up * Time.deltaTime * 60);
+        }
     }
 
     public void StartPuzzle()
@@ -67,7 +76,8 @@ public class MemorizingPuzzleManager : MonoBehaviour
         var button = EventSystem.current.currentSelectedGameObject;
 
         if (buttonIndex.ToString() != button.name)
-        {            
+        {
+            _lose = true;
             _npc.CatchCondition(2);
         }
         else
