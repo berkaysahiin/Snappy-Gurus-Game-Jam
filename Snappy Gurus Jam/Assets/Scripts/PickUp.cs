@@ -49,9 +49,12 @@ public class PickUp : MonoBehaviour
             Physics.Raycast(ray,out hit);
         }
 
-        if (hit.collider != null && hit.transform.gameObject.GetComponent<Pickable>() != null)
+
+        if (hit.collider != null && hit.transform.gameObject.GetComponent<Pickable>())
         {
-            return hit.transform.gameObject;
+            var pickable = hit.transform.gameObject.GetComponent<Pickable>();
+            if(pickable.enabled)
+                return hit.transform.gameObject;
         }
         
         return null;

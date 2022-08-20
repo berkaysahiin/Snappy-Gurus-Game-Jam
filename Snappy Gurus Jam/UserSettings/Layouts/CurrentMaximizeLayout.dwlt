@@ -224,9 +224,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 267d0000
       m_LastClickedID: 0
-      m_ExpandedIDs: cae1ffff14fbffffcc7c0000967d0000cc7f00000e8000001e8100003881000044810000a8810000e88100008c8300001e840000328400007a840000
+      m_ExpandedIDs: 14fbffffc27d0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -242,7 +242,7 @@ MonoBehaviour:
         m_IsRenaming: 0
         m_OriginalEventType: 11
         m_IsRenamingFilename: 0
-        m_ClientGUIView: {fileID: 5}
+        m_ClientGUIView: {fileID: 12}
       m_SearchString: 
     m_ExpandedScenes: []
     m_CurrenRootInstanceID: 0
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -32.01338, y: -5.6484923, z: -7.049978}
+    m_Target: {x: -17.573833, y: -9.704981, z: 4.968847}
     speed: 2
-    m_Value: {x: -32.01338, y: -5.6484923, z: -7.049978}
+    m_Value: {x: -17.573833, y: -9.704981, z: 4.968847}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -595,13 +595,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.050046653, y: -0.7638159, z: 0.054311987, w: 0.64194334}
+    m_Target: {x: 0.19130379, y: -0.5271386, z: 0.11845324, w: 0.82004154}
     speed: 2
-    m_Value: {x: 0.05002264, y: -0.7634494, z: 0.054285925, w: 0.6416353}
+    m_Value: {x: 0.19121093, y: -0.5268827, z: 0.11839574, w: 0.8196435}
   m_Size:
-    m_Target: 14.515927
+    m_Target: 10.45
     speed: 2
-    m_Value: 14.515927
+    m_Value: 10.45
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ConsoleWindow
+  m_Name: ProjectBrowser
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -645,14 +645,14 @@ MonoBehaviour:
     y: 658
     width: 1518
     height: 329
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
-  m_ActualView: {fileID: 11}
+  m_MinSize: {x: 231, y: 271}
+  m_MaxSize: {x: 10001, y: 10021}
+  m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
   - {fileID: 11}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -694,23 +694,23 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\berka\Documents\GitHub\Snappy-Gurus-Game-Jam\Snappy
     Gurus Jam
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 94aa0000
-    m_LastClickedID: 43668
-    m_ExpandedIDs: 00000000b8900000ba900000bc900000be900000c0900000c2900000c4900000c69000008aaa0000c8aa000000ca9a3b
+    scrollPos: {x: 0, y: 128}
+    m_SelectedIDs: b2920000
+    m_LastClickedID: 37554
+    m_ExpandedIDs: 00000000189200001a9200001c9200001e92000020920000229200002492000026920000289200009292000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -738,7 +738,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b8900000ba900000bc900000be900000c0900000c2900000c4900000c6900000c8aa000000ca9a3b
+    m_ExpandedIDs: 00000000189200001a9200001c9200001e9200002092000022920000249200002692000028920000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -763,9 +763,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: 267d0000
+    m_LastClickedInstanceID: 32038
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c623000090740000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
