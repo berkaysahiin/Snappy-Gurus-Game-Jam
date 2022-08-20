@@ -17,7 +17,6 @@ public class Sensor : MonoBehaviour
     {
         var pickable = other.gameObject.GetComponent<Pickable>();
         if (pickable == null) return;
-        
         _npc.CatchCondition(1);
     }
 }
