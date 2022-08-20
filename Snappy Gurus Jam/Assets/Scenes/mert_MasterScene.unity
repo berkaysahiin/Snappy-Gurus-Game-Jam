@@ -1634,10 +1634,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2687872075192006306, guid: aaad8cb2456c39f4c867034d413bf5db, type: 3}
-      propertyPath: FPCamera
-      value: 
-      objectReference: {fileID: 1521549474}
     - target: {fileID: 2687872075192006360, guid: aaad8cb2456c39f4c867034d413bf5db, type: 3}
       propertyPath: m_Name
       value: PlayerArmature
@@ -2020,17 +2016,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 7860663910981750377, guid: 2f0055d9b9fa9fa47a906d18c7f84d3d, type: 3}
---- !u!114 &1521549474 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7637498541319448575, guid: aaad8cb2456c39f4c867034d413bf5db, type: 3}
-  m_PrefabInstance: {fileID: 1231358666}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e653bab7fb20e499bda25e1b646fea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!64 &1527639328
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2335,19 +2320,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3316599609344830562, guid: aaad8cb2456c39f4c867034d413bf5db, type: 3}
   m_PrefabInstance: {fileID: 1231358666}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1862618976
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1862618965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a9ff60a8738ad74786c3b489b03b9c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 100
 --- !u!64 &1879376096
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2515,22 +2487,6 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1862618965}
-    - target: {fileID: 2676148851407669326, guid: c5988e1a31fed5a48b79498c65dfd88c, type: 3}
-      propertyPath: angleValue
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676148851407669326, guid: c5988e1a31fed5a48b79498c65dfd88c, type: 3}
-      propertyPath: xzRotVal.x
-      value: -30
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676148851407669326, guid: c5988e1a31fed5a48b79498c65dfd88c, type: 3}
-      propertyPath: camLookRadius
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2676148851407669326, guid: c5988e1a31fed5a48b79498c65dfd88c, type: 3}
-      propertyPath: camRotateSpeed
-      value: 90
-      objectReference: {fileID: 0}
     - target: {fileID: 2676148851407669327, guid: c5988e1a31fed5a48b79498c65dfd88c, type: 3}
       propertyPath: m_Name
       value: Camera

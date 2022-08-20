@@ -625,6 +625,7 @@ GameObject:
   - component: {fileID: 2687872075192006304}
   - component: {fileID: 2687872075192006306}
   - component: {fileID: 4894331188763464296}
+  - component: {fileID: 1862618976}
   m_Layer: 8
   m_Name: PlayerArmature
   m_TagString: Player
@@ -811,14 +812,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d12a41e1974c7ae438cb473427456a1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orientation: {fileID: 7637498541331093308}
   playerHeight: 2
   groundDrag: 5
+  WalkSpeed: 2
+  RunSpeed: 4.5
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  WalkSpeed: 2
-  RunSpeed: 4.5
+  orientation: {fileID: 7637498541331093308}
 --- !u!114 &2687872075192006305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -861,6 +862,7 @@ MonoBehaviour:
   holdPosition: {fileID: 7637498541681333575}
   orientation: {fileID: 7637498541331093308}
   speed: 300
+  FPCamera: {fileID: 7637498541319448575}
 --- !u!114 &4894331188763464296
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -873,6 +875,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342e933d3a86dab4f9c7558e317b4466, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  armTarget: {fileID: 0}
+  respawnTime: 3
+--- !u!114 &1862618976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687872075192006360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9ff60a8738ad74786c3b489b03b9c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 100
 --- !u!1 &2793433525816803972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,7 +2699,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.8830313, y: 1}
+    m_SensorSize: {x: 0.95763993, y: 1}
     Iso: 200
     ShutterSpeed: 0.005
     Aperture: 16

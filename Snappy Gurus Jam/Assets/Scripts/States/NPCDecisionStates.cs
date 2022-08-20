@@ -65,7 +65,7 @@ public class NPCDecisionStates : IDecision
         _player.PlayerMovement.CanMove = false;
         
         _player.ArmTarget.transform.position = Vector3.Lerp(_player.ArmTarget.transform.position,
-            _player.ArmTarget.transform.forward + new Vector3(0, 5, 2), Time.deltaTime);
+            _player.ArmTarget.transform.forward + new Vector3(0, 5, 20), Time.deltaTime);
        
         _navMesh.SetDestination(_player.transform.position);
     }

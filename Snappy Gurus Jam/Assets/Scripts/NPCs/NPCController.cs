@@ -28,7 +28,7 @@ namespace SB
         {
             if (_gameCamera.Detected)
             {
-                
+                CatchCondition(0);   
             }
         }
 

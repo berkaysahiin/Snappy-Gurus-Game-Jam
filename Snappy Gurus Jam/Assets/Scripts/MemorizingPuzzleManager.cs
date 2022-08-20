@@ -67,7 +67,7 @@ public class MemorizingPuzzleManager : MonoBehaviour
         var button = EventSystem.current.currentSelectedGameObject;
 
         if (buttonIndex.ToString() != button.name)
-        {
+        {            
             _npc.CatchCondition(2);
         }
         else
@@ -146,6 +146,4 @@ public class MemorizingPuzzleManager : MonoBehaviour
         _showcaseButton.SetActive(true);
         _text.text = endWord;
     }
-
-   
 }
