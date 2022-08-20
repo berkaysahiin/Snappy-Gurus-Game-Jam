@@ -1,10 +1,10 @@
 using UnityEngine;
+using SB;
 
 public class ButtonPuzzle : MonoBehaviour
 {
 	[SerializeField] private GameObject door;
 	private bool isDoorOpen;
-
 
 	private void OnTriggerStay(Collider other)
 	{
