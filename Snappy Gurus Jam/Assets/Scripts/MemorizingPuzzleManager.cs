@@ -1,6 +1,7 @@
 ﻿using System;
 using DG.Tweening;
 using JetBrains.Annotations;
+using SB;
 using SG;
 using UnityEngine;
 using TMPro;
@@ -18,12 +19,19 @@ public class MemorizingPuzzleManager : MonoBehaviour
     [SerializeField] private GameObject _showcaseButton;
     [SerializeField] private TextMeshProUGUI _text;
 
+    private NPCController _npc;
+    
     private int buttonIndex;
     private int _letterIndex;
     private int _wordIndex;
     private string word;
     private string endWord = "Behind";
     private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSY" };
+
+    private void Awake()
+    {
+        _npc = FindObjectOfType<NPCController>();
+    }
 
     private void Start()
     {
@@ -60,7 +68,7 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
         if (buttonIndex.ToString() != button.name)
         {
-            ReloadScene(); // robot is attacking to us
+            _npc.CatchCondition(2);
         }
         else
         {

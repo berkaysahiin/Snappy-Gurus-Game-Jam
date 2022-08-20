@@ -19,7 +19,7 @@ namespace SB
             _player = FindObjectOfType<PlayerCharacterController>();
             _navMesh = GetComponent<NavMeshAgent>();
             _decisions = new NPCDecisionStates(_navMesh, _player);
-
+            
             //just for test
             _gameCamera = FindObjectOfType<GameCameraController>();
         }
@@ -28,8 +28,13 @@ namespace SB
         {
             if (_gameCamera.Detected)
             {
-                _decisions.PlayerCatchConditions[0].Invoke();
+                
             }
+        }
+
+        public void CatchCondition(int catchIndex)
+        {
+            _decisions.PlayerCatchConditions[catchIndex].Invoke();
         }
     }
 }
