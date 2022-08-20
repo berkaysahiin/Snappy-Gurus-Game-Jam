@@ -60,9 +60,8 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
         if (buttonIndex.ToString() != button.name)
         {
-            ReloadScene();
+            ReloadScene(); // robot is attacking to us
         }
-
         else
         {
             if (buttonIndex == Words[_wordIndex - 1].Length - 1)

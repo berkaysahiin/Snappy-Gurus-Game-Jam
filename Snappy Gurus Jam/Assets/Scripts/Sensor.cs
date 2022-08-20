@@ -10,6 +10,6 @@ public class Sensor : MonoBehaviour
         var pickable = other.gameObject.GetComponent<Pickable>();
         if (pickable == null) return;
 
-        Debug.Log("you can't enter ");
+        Debug.Log("robot is attacking");
     }
 }
