@@ -13,6 +13,7 @@ namespace SB
         public static Vector2 Look { get; private set; }
         public static Vector2 MousePosition { get; private set; }
         public static bool Run { get; private set; }
+        public static bool Enter {get; private set; }
         public static bool InteractButton { get; private set; }
 
         [SerializeField] private PlayerInput playerInput;
@@ -23,6 +24,7 @@ namespace SB
         private InputAction _runAction;
         private InputAction _interactAction;
         private InputAction _mousePosition;
+        private InputAction _enterAction;
 
         private void Awake()
         {
@@ -32,14 +34,17 @@ namespace SB
             _runAction = _inputActionMap.FindAction("Run");
             _interactAction = _inputActionMap.FindAction("Interact");
             _mousePosition = _inputActionMap.FindAction("MousePosition");
+            _enterAction = _inputActionMap.FindAction("EnterAction");
 
             _moveAction.performed += OnMove;
             _lookAction.performed += OnLook;
             _runAction.performed += OnRun;
+            _enterAction.performed += OnEnter;
 
             _moveAction.canceled += OnMove;
             _lookAction.canceled += OnLook;
             _runAction.canceled += OnRun;
+            _enterAction.canceled += OnEnter;
 
             _interactAction.performed += OnInteract;
             _interactAction.canceled += OnInteract;
@@ -71,6 +76,11 @@ namespace SB
         private void OnMouseMove(InputAction.CallbackContext callbackContext)
         {
             MousePosition = callbackContext.ReadValue<Vector2>();
+        }
+
+        private void OnEnter(InputAction.CallbackContext callbackContext) 
+        {
+            Enter = callbackContext.ReadValueAsButton();
         }
 
         private void OnEnable()

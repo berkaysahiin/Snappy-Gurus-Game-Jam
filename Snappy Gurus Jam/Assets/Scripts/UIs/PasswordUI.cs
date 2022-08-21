@@ -6,30 +6,46 @@ namespace SB
 {
     public class PasswordUI : MonoBehaviour
     {
+        public bool IsPasswordTrue => _inputField.text.Equals(password);
+
         [SerializeField] private string password = "PASSWORD";
-        
-        private GameCameraController _gameCameraController;
+        [SerializeField] private GameCameraController[] _gameCameraController;
+        [SerializeField] private NPCController _npcController; 
+        [SerializeField] private TextMeshProUGUI finalText;
         private NPCController _npc;
-        
         private string _inputText;  
         private TMP_InputField _inputField;
         
-        public bool IsPasswordTrue => _inputField.text.Equals(password);
         
         private void Awake()
         {
-            _gameCameraController = FindObjectOfType<GameCameraController>();
             _npc = FindObjectOfType<NPCController>();
             _inputField = GetComponent<TMP_InputField>();
         }
 
         private void Update()
         {
-            if (IsPasswordTrue)
-            {
-                _gameCameraController.enabled = false;
-                _npc.enabled = false;
-            }
+            
+                if(InputManager.Enter) 
+                {
+                    if (IsPasswordTrue)
+                    {
+                        _inputField.enabled = false;
+                        finalText.text = "Access Granted"; 
+                        foreach(var camera in _gameCameraController) 
+                        {
+                            camera.enabled = false;
+                        }
+                        _npc.enabled = false;
+                    }
+                    else
+                    {
+                        _inputField.enabled = false;
+                        finalText.text = "Access Denied"; 
+                        _npcController.CatchCondition(2);
+                    }
+                }
+            
         }
 
         public void ReadInput(string value)

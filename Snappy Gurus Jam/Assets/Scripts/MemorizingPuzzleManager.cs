@@ -27,7 +27,7 @@ public class MemorizingPuzzleManager : MonoBehaviour
     private int _letterIndex;
     private int _wordIndex;
     private string word;
-    private string endWord = "Behind";
+    private string endWord = "ignrc";
     private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSY" };
 
     public ComputerScreenCamController playerCamera;
@@ -50,9 +50,6 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
     private void Update()
     {
-        print("button index: " + buttonIndex);
-        print("word index: " + _wordIndex);
-
         if (_lose)
         {
             playerCamera.transform.Rotate(Vector3.up * Time.deltaTime * 60);
@@ -77,6 +74,7 @@ public class MemorizingPuzzleManager : MonoBehaviour
 
         if (buttonIndex.ToString() != button.name)
         {
+            button.GetComponent<Image>().color = Color.red;
             _lose = true;
             _npc.CatchCondition(2);
         }
