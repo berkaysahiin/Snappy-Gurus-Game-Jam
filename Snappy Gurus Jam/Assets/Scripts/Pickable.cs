@@ -27,6 +27,6 @@ public class Pickable : MonoBehaviour
     private void Update()
     {
         var velocity = _rigidbody.velocity;
-        _rigidbody.velocity = IsBeingHold ? new Vector3(velocity.x,0.1f,velocity.z) : _rigidbody.velocity;
+        _rigidbody.velocity = IsBeingHold ? new Vector3(velocity.x/2,0.1f,velocity.z/2) : _rigidbody.velocity;
     }
 }
