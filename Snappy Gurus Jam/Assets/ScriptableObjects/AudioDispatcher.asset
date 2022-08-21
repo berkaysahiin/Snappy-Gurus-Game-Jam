@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AudioDispatcher
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: e880d5bc59ca0bb489344fe843250be0, type: 3}
+  - {fileID: 8300000, guid: e342c116eaac0714088d066c982186d4, type: 3}
   - {fileID: 8300000, guid: a9aaa460cacd64940be923205da0401d, type: 3}
   - {fileID: 8300000, guid: 2b994190eddd0ff418a462f9d814e410, type: 3}
   - {fileID: 8300000, guid: 57d6e777e98b6574bbc749e622a69db6, type: 3}
