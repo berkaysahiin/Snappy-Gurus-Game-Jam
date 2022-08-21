@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 33725
+  controlID: 37269
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 33683
+  controlID: 37270
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 33654
+  controlID: 37271
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 318
     height: 627
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -223,10 +223,10 @@ MonoBehaviour:
     m_SaveData: []
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 0}
+      scrollPos: {x: 0, y: 11111}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 8efaffffbafaffffbefaffff14fbffff0485000008850000c4890000808a00000090000004900000da950000e6950000f8950000da960000e09600005e990000709b0000
+      m_ExpandedIDs: e67ffefff882feff7a97fefff49afeff209cfeff12a1feff8efaffffbafaffffbefaffff14fbffff0485000008850000c4890000808a00000090000004900000da950000e6950000f8950000da960000e09600005e990000709b0000045e060010630600126306001463060016630600
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 3.1958444, y: -3.7297091, z: 18.768991}
+    m_Target: {x: -2.2410998, y: 3.075667, z: 43.146828}
     speed: 2
-    m_Value: {x: 3.1958444, y: -3.7297091, z: 18.768991}
+    m_Value: {x: -2.2410998, y: 3.075667, z: 43.146828}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -595,13 +595,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.105031416, y: 0.046854816, z: -0.0045948527, w: -0.99353683}
+    m_Target: {x: 0.014655129, y: 0.054558143, z: 0.0011382698, w: -0.9985867}
     speed: 2
-    m_Value: {x: -0.105012335, y: 0.046846304, z: -0.004594018, w: -0.99335635}
+    m_Value: {x: 0.014652432, y: 0.054548103, z: 0.0011380604, w: -0.99840295}
   m_Size:
-    m_Target: 15.41632
+    m_Target: 19.994835
     speed: 2
-    m_Value: 15.41632
+    m_Value: 19.994835
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -645,8 +645,8 @@ MonoBehaviour:
     y: 627
     width: 1506
     height: 360
-  m_MinSize: {x: 231, y: 271}
-  m_MaxSize: {x: 10001, y: 10021}
+  m_MinSize: {x: 230, y: 250}
+  m_MaxSize: {x: 10000, y: 10000}
   m_ActualView: {fileID: 10}
   m_Panes:
   - {fileID: 10}
@@ -694,13 +694,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources
+    - Assets/Audios
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Audios
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\berka\Documents\GitHub\Snappy-Gurus-Game-Jam\Snappy
     Gurus Jam
@@ -708,8 +708,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: b6bb0000
-    m_LastClickedID: 48054
+    m_SelectedIDs: 2abc0000
+    m_LastClickedID: 48170
     m_ExpandedIDs: 00000000b6bb0000b8bb0000babb0000bcbb0000bebb0000c0bb0000c2bb0000c4bb0000c6bb0000c8bb0000cabb000028bc000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -766,7 +766,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c623000090740000868500002e110f009cc30000fa9c0300d86a0400
+    m_ExpandedInstanceIDs: c623000090740000868500002e110f009cc30000fa9c0300d86a0400689f0600
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -841,8 +841,8 @@ MonoBehaviour:
     y: 0
     width: 336
     height: 987
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}

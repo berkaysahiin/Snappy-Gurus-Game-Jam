@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SB;
 using UnityEngine;
+using SG;
 
 public class Sensor : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class Sensor : MonoBehaviour
     {
         var pickable = other.gameObject.GetComponent<Pickable>();
         if (pickable == null) return;
-        print("Won");
+        GameManager.Instance.LoadNextScene();
     }
 
 }

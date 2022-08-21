@@ -1,0 +1,265 @@
+fileFormatVersion: 2
+guid: dcb364bb839f4a74e907282cc1fa094c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Whiteboard_Messages_55
+      rect:
+        serializedVersion: 2
+        x: 1530
+        y: 458
+        width: 557
+        height: 312
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d561c8f1d670c408860146a71d5f8c
+      internalID: 707063456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Whiteboard_Messages_100
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 31
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be6acf56587f694d9a40447c67d107a
+      internalID: 341049991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: c6df2df7e67bbdc4f9e523e084eed0d2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Whiteboard_Messages_68: -687756915
+      Whiteboard_Messages_79: 425571591
+      Whiteboard_Messages_98: 266127011
+      Whiteboard_Messages_88: 1072321027
+      Whiteboard_Messages_31: 1008369137
+      Whiteboard_Messages_10: 590283156
+      Whiteboard_Messages_87: 1351652313
+      Whiteboard_Messages_91: -938611327
+      Whiteboard_Messages_60: 355091740
+      Whiteboard_Messages_6: -474367456
+      Whiteboard_Messages_44: 18860472
+      Whiteboard_Messages_76: 1626555391
+      Whiteboard_Messages_0: 1778367684
+      Whiteboard_Messages_94: 1048750778
+      Whiteboard_Messages_99: -682556334
+      Whiteboard_Messages_25: -1272229472
+      Whiteboard_Messages_37: -54339496
+      Whiteboard_Messages_8: 350376093
+      Whiteboard_Messages_5: -1312865140
+      Whiteboard_Messages_36: 2004250905
+      Whiteboard_Messages_96: -1984879252
+      Whiteboard_Messages_49: -917496732
+      Whiteboard_Messages_3: -1441242066
+      Whiteboard_Messages_45: 728118528
+      Whiteboard_Messages_65: -1766729129
+      Whiteboard_Messages_26: 2013525578
+      Whiteboard_Messages_43: 1822610717
+      Whiteboard_Messages_55: 707063456
+      Whiteboard_Messages_58: 1805609368
+      Whiteboard_Messages_12: 565367763
+      Whiteboard_Messages_47: -585216217
+      Whiteboard_Messages_86: 1186719070
+      Whiteboard_Messages_81: 800997606
+      Whiteboard_Messages_82: -1825249432
+      Whiteboard_Messages_14: -1129869604
+      Whiteboard_Messages_62: 386448869
+      Whiteboard_Messages_71: -2062389018
+      Whiteboard_Messages_63: -395454583
+      Whiteboard_Messages_16: -1048564822
+      Whiteboard_Messages_93: 274046151
+      Whiteboard_Messages_46: -501559979
+      Whiteboard_Messages_33: 1627832195
+      Whiteboard_Messages_34: -1665376605
+      Whiteboard_Messages_38: -1923652573
+      Whiteboard_Messages_67: 776740297
+      Whiteboard_Messages_56: -772593858
+      Whiteboard_Messages_23: -1584460811
+      Whiteboard_Messages_97: 620442051
+      Whiteboard_Messages_42: -1640933587
+      Whiteboard_Messages_84: 1993922482
+      Whiteboard_Messages_48: -1826608101
+      Whiteboard_Messages_11: -988955181
+      Whiteboard_Messages_53: 159908356
+      Whiteboard_Messages_40: 1360488109
+      Whiteboard_Messages_2: -422319091
+      Whiteboard_Messages_77: -1830807949
+      Whiteboard_Messages_22: 372125634
+      Whiteboard_Messages_95: -816446072
+      Whiteboard_Messages_24: -1095366489
+      Whiteboard_Messages_21: -1291381508
+      Whiteboard_Messages_100: 341049991
+      Whiteboard_Messages_51: 705935068
+      Whiteboard_Messages_7: 1236147125
+      Whiteboard_Messages_64: -2138129494
+      Whiteboard_Messages_89: -1103440169
+      Whiteboard_Messages_83: 1630435792
+      Whiteboard_Messages_30: -839751556
+      Whiteboard_Messages_28: -757738597
+      Whiteboard_Messages_39: -307658983
+      Whiteboard_Messages_52: 1152973709
+      Whiteboard_Messages_27: 1378984760
+      Whiteboard_Messages_29: 1384259029
+      Whiteboard_Messages_19: 432541321
+      Whiteboard_Messages_1: 536193537
+      Whiteboard_Messages_20: 671925657
+      Whiteboard_Messages_41: 560003202
+      Whiteboard_Messages_17: -221031975
+      Whiteboard_Messages_72: 460591388
+      Whiteboard_Messages_90: 1392546848
+      Whiteboard_Messages_15: 1847910656
+      Whiteboard_Messages_59: -1822808838
+      Whiteboard_Messages_50: -1795171891
+      Whiteboard_Messages_69: 2124931959
+      Whiteboard_Messages_80: 1884633491
+      Whiteboard_Messages_61: 338439662
+      Whiteboard_Messages_66: -1672776123
+      Whiteboard_Messages_57: 1804752043
+      Whiteboard_Messages_75: 1297322165
+      Whiteboard_Messages_92: 1855184283
+      Whiteboard_Messages_18: -97345802
+      Whiteboard_Messages_54: -960115863
+      Whiteboard_Messages_85: 805191166
+      Whiteboard_Messages_74: -319430802
+      Whiteboard_Messages_73: -137610396
+      Whiteboard_Messages_70: 292991619
+      Whiteboard_Messages_9: 49871913
+      Whiteboard_Messages_78: -501974494
+      Whiteboard_Messages_32: -1131555505
+      Whiteboard_Messages_13: 586070266
+      Whiteboard_Messages_4: 1023565980
+      Whiteboard_Messages_35: -1317899052
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
