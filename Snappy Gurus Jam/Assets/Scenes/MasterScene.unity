@@ -2236,6 +2236,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 3048851310703494, guid: 0749e9b0d69d9814d8201ea049d3a107, type: 3}
+--- !u!4 &386168471 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+  m_PrefabInstance: {fileID: 980013734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!64 &387466553
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3357,6 +3362,7 @@ Transform:
   - {fileID: 367952509}
   - {fileID: 1420669300}
   - {fileID: 887363428}
+  - {fileID: 386168471}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5352,6 +5358,63 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -964895270735209126, guid: 2f0055d9b9fa9fa47a906d18c7f84d3d, type: 3}
+--- !u!1001 &980013734
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 614908691}
+    m_Modifications:
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32.725227
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.214379
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -5.4829407
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416818, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142288124298416828, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
+      propertyPath: m_Name
+      value: '[AudioManager]'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d01bb1a7dc8aa9a4fa5fc60ff7493758, type: 3}
 --- !u!64 &982202430
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -67163,8 +67226,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter password
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e0f026ab3056b548b041cf9911f2729, type: 2}
+  m_sharedMaterial: {fileID: 3389786460355035229, guid: 3e0f026ab3056b548b041cf9911f2729, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
