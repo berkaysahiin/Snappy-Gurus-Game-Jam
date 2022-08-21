@@ -186,8 +186,8 @@ MonoBehaviour:
     y: 0
     width: 295
     height: 734
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 6}
   m_Panes:
   - {fileID: 6}
@@ -224,23 +224,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 3ecbffff
-      m_LastClickedID: -13506
-      m_ExpandedIDs: 1ec2ffff88ccffff94ccffffd0d0ffff76deffff14fbffffbe7c00005e7d0000d0be000076c3000082c3000094c3000048c40000
+      m_SelectedIDs: 584afeff
+      m_LastClickedID: -112040
+      m_ExpandedIDs: 0c4bfeff1ec2ffff68ccffff72ccffff88ccffff94ccffffd0d0ffff76deffff14fbffffbe7c00005e7d0000d0be000076c3000082c3000094c3000048c40000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Skeleton
+        m_OriginalName: Skeleton
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -13212
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -546,9 +546,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 4.758972, y: -5.031433, z: 5.2867174}
+    m_Target: {x: 4.7389603, y: 1.66638, z: -11.950994}
     speed: 2
-    m_Value: {x: 4.758972, y: -5.031433, z: 5.2867174}
+    m_Value: {x: 4.7389603, y: 1.66638, z: -11.950994}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -595,13 +595,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.24503091, y: 0.113699, z: -0.028948402, w: -0.96239054}
+    m_Target: {x: -0.0782168, y: -0.7461337, z: 0.08906035, w: -0.6551733}
     speed: 2
-    m_Value: {x: -0.24503076, y: 0.11369893, z: -0.028948385, w: -0.96238995}
+    m_Value: {x: -0.07821613, y: -0.7461273, z: 0.089059584, w: -0.6551677}
   m_Size:
-    m_Target: 10
+    m_Target: 1.1571074
     speed: 2
-    m_Value: 10
+    m_Value: 1.1571074
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -694,13 +694,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\berka\Documents\GitHub\Snappy-Gurus-Game-Jam\Snappy
     Gurus Jam
@@ -708,9 +708,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 36930000
-    m_LastClickedID: 37686
-    m_ExpandedIDs: 000000001491000016910000189100001a9100001c9100001e9100002091000022910000249100005e93000000ca9a3b
+    m_SelectedIDs: 46930000
+    m_LastClickedID: 37702
+    m_ExpandedIDs: 000000001491000016910000189100001a9100001c9100001e910000209100002291000024910000369300005e93000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -738,7 +738,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001491000016910000189100001a9100001c9100001e91000020910000229100002491000000ca9a3b
+    m_ExpandedIDs: 000000001491000016910000189100001a9100001c9100001e9100002091000022910000249100005e93000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -763,9 +763,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 3ecbffff
-    m_LastClickedInstanceID: -13506
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 584afeff
+    m_LastClickedInstanceID: -112040
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c62300009074000086850000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

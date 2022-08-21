@@ -37,7 +37,7 @@ public class PickUp : MonoBehaviour
         
         Debug.Log(selectableObject);
 
-        CalculateHoldPositionYCoordinate();
+       // CalculateHoldPositionYCoordinate();
     }
 
     [CanBeNull]
