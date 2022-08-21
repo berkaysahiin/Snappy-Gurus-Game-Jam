@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "com.mb.patterns": "file:D:/MertPackages/MB_UnityPackages/MB_PatternsPackage",
+    "com.mb.patterns": "file:C:/Users/berka/Downloads/MB_PatternsPackage/MB_PatternsPackage",
     "com.unity.collab-proxy": "1.17.1",
     "com.unity.feature.characters-animation": "1.0.0",
     "com.unity.feature.development": "1.0.1",
