@@ -27,7 +27,7 @@ public class MemorizingPuzzleManager : MonoBehaviour
     private int _letterIndex;
     private int _wordIndex;
     private string word;
-    private string endWord = "ignrc";
+    private string endWord = "ignrc =>";
     private static readonly string[] Words = new[] { "SXWP", "AXIPL", "CUNXQS", "AIONMSY" };
 
     public ComputerScreenCamController playerCamera;
