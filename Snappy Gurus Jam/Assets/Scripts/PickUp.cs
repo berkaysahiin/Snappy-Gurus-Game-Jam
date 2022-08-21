@@ -18,6 +18,7 @@ public class PickUp : MonoBehaviour
 
     private GameObject selectableObject => GetSelectableObject();
     private bool isCurrentlyHolding;
+    private bool _grabSound;
     private RaycastHit hit;
     private Vector3 initialHoldPosition;
 
@@ -41,7 +42,6 @@ public class PickUp : MonoBehaviour
         
         if (_pickable != null && _pickable.IsBeingHold)
         {
-            AudioManager.Instance.PlayEffect(1);
         }
         
        // CalculateHoldPositionYCoordinate();
@@ -71,9 +71,14 @@ public class PickUp : MonoBehaviour
     {
         isCurrentlyHolding = true;
         
+        
         if (selectableObject != null && CheckSelectableObjectInRange())
         {
-
+            if (!_grabSound)
+            {
+                 AudioManager.Instance.PlayEffect(1);
+                 _grabSound = true;
+            }
             _pickable = selectableObject.gameObject.GetComponent<Pickable>();
             _pickable.IsBeingHold = true;
 
@@ -89,6 +94,7 @@ public class PickUp : MonoBehaviour
     }
     private void ReleaseObject()
     {
+        _grabSound = false;
         if(selectableObject != null)
             selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = false;
         isCurrentlyHolding = false;
