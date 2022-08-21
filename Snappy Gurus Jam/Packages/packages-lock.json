@@ -8,7 +8,7 @@
       "url": "https://packages.unity.com"
     },
     "com.mb.patterns": {
-      "version": "file:C:/Users/berka/Downloads/MB_PatternsPackage/MB_PatternsPackage",
+      "version": "file:D:/MertPackages/MB_UnityPackages/MB_PatternsPackage",
       "depth": 0,
       "source": "local",
       "dependencies": {}

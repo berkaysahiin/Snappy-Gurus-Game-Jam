@@ -6000,6 +6000,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4517418929748769451}
   - component: {fileID: 4517418929748769450}
+  - component: {fileID: 2045701823}
   m_Layer: 0
   m_Name: Computer Camera(Virtual Machine)
   m_TagString: Untagged
@@ -6068,6 +6069,18 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_ComponentOwner: {fileID: 4517418929592243901}
+--- !u!114 &2045701823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4517418929748769452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e735cbb4332dbe54ab5f4af000c1a8df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4517418929948190525
 GameObject:
   m_ObjectHideFlags: 0
@@ -7147,3 +7160,4 @@ MonoBehaviour:
   _puzzleContainer: {fileID: 2677299712866968995}
   _showcaseButton: {fileID: 2677299711774187283}
   _text: {fileID: 2677299711645225786}
+  playerCamera: {fileID: 0}
