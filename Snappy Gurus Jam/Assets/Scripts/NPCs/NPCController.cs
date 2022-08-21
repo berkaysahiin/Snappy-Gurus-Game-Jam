@@ -31,6 +31,7 @@ namespace SB
 
         public void CatchCondition(int catchIndex)
         {
+            Debug.Log("DETEXTEDDDDDDD");
             _decisions.PlayerCatchConditions[catchIndex].Invoke();
         }
 

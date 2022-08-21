@@ -71,7 +71,8 @@ public class MemorizingPuzzleManager : MonoBehaviour
     public void CheckButtonIndex()
     {
         var button = EventSystem.current.currentSelectedGameObject;
-
+        AudioManager.Instance.PlayEffect(2);
+        
         if (buttonIndex.ToString() != button.name)
         {
             button.GetComponent<Image>().color = Color.red;

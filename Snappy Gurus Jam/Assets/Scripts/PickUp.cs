@@ -14,6 +14,8 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private CinemachineVirtualCamera FPCamera;
 
+    private Pickable _pickable;
+
     private GameObject selectableObject => GetSelectableObject();
     private bool isCurrentlyHolding;
     private RaycastHit hit;
@@ -36,7 +38,12 @@ public class PickUp : MonoBehaviour
         }
         
         Debug.Log(selectableObject);
-
+        
+        if (_pickable != null && _pickable.IsBeingHold)
+        {
+            AudioManager.Instance.PlayEffect(1);
+        }
+        
        // CalculateHoldPositionYCoordinate();
     }
 
@@ -52,8 +59,8 @@ public class PickUp : MonoBehaviour
 
         if (hit.collider != null && hit.transform.gameObject.GetComponent<Pickable>())
         {
-            var pickable = hit.transform.gameObject.GetComponent<Pickable>();
-            if(pickable.enabled)
+            _pickable = hit.transform.gameObject.GetComponent<Pickable>();
+            if(_pickable.enabled)
                 return hit.transform.gameObject;
         }
         
@@ -66,13 +73,14 @@ public class PickUp : MonoBehaviour
         
         if (selectableObject != null && CheckSelectableObjectInRange())
         {
-            var pickable = selectableObject.gameObject.GetComponent<Pickable>();
-            pickable.IsBeingHold = true;
+
+            _pickable = selectableObject.gameObject.GetComponent<Pickable>();
+            _pickable.IsBeingHold = true;
 
             selectableObject.transform.position = holdPosition.position;
             selectableObject.transform.rotation = Quaternion.Slerp(selectableObject.transform.rotation, orientation.rotation, speed* Time.smoothDeltaTime);
 
-            if(pickable.ItemType == ItemType.Paper)
+            if(_pickable.ItemType == ItemType.Paper)
             {
                 selectableObject.transform.LookAt(transform);
             }

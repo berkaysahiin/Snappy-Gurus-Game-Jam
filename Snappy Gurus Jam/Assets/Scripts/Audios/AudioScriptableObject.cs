@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(order = 0, fileName = "AudioScriptable", menuName = "AudioScriptable")]
 public class AudioScriptableObject : ScriptableObject
 {
-    [Header("-----Audio Clip-----")]
+    [Header("-----Audio Clips-----")]
     [Space(20)]
     public List<AudioClip> clips;
 }

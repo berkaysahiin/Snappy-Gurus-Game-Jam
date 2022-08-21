@@ -30,6 +30,7 @@ namespace SB
                 {
                     if (IsPasswordTrue)
                     {
+                        AudioManager.Instance.PlayEffect(3);
                         _inputField.enabled = false;
                         finalText.text = "Access Granted"; 
                         

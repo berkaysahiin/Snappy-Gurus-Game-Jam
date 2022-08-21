@@ -61,6 +61,7 @@ public class NPCDecisionStates : IDecision
     private void MoveToPlayer()
     {
         _player.Health.TakeDamage(1000); // direct kill
+        AudioManager.Instance.PlayEffect(0);
         
         _player.PlayerMovement.CanMove = false;
         
