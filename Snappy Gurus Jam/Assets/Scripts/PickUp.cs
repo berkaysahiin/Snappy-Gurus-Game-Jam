@@ -14,8 +14,11 @@ public class PickUp : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private CinemachineVirtualCamera FPCamera;
 
+    private Pickable _pickable;
+
     private GameObject selectableObject => GetSelectableObject();
     private bool isCurrentlyHolding;
+    private bool _grabSound;
     private RaycastHit hit;
     private Vector3 initialHoldPosition;
 
@@ -36,7 +39,11 @@ public class PickUp : MonoBehaviour
         }
         
         Debug.Log(selectableObject);
-
+        
+        if (_pickable != null && _pickable.IsBeingHold)
+        {
+        }
+        
        // CalculateHoldPositionYCoordinate();
     }
 
@@ -52,8 +59,8 @@ public class PickUp : MonoBehaviour
 
         if (hit.collider != null && hit.transform.gameObject.GetComponent<Pickable>())
         {
-            var pickable = hit.transform.gameObject.GetComponent<Pickable>();
-            if(pickable.enabled)
+            _pickable = hit.transform.gameObject.GetComponent<Pickable>();
+            if(_pickable.enabled)
                 return hit.transform.gameObject;
         }
         
@@ -64,15 +71,21 @@ public class PickUp : MonoBehaviour
     {
         isCurrentlyHolding = true;
         
+        
         if (selectableObject != null && CheckSelectableObjectInRange())
         {
-            var pickable = selectableObject.gameObject.GetComponent<Pickable>();
-            pickable.IsBeingHold = true;
+            if (!_grabSound)
+            {
+                 AudioManager.Instance.PlayEffect(1);
+                 _grabSound = true;
+            }
+            _pickable = selectableObject.gameObject.GetComponent<Pickable>();
+            _pickable.IsBeingHold = true;
 
             selectableObject.transform.position = holdPosition.position;
             selectableObject.transform.rotation = Quaternion.Slerp(selectableObject.transform.rotation, orientation.rotation, speed* Time.smoothDeltaTime);
 
-            if(pickable.ItemType == ItemType.Paper)
+            if(_pickable.ItemType == ItemType.Paper)
             {
                 selectableObject.transform.LookAt(transform);
             }
@@ -81,6 +94,7 @@ public class PickUp : MonoBehaviour
     }
     private void ReleaseObject()
     {
+        _grabSound = false;
         if(selectableObject != null)
             selectableObject.gameObject.GetComponent<Pickable>().IsBeingHold = false;
         isCurrentlyHolding = false;

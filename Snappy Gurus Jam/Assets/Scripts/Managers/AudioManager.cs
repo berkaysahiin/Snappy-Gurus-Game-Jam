@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using MB.Abstracts;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 namespace SB
@@ -10,7 +11,6 @@ namespace SB
     {
         [SerializeField] private AudioScriptableObject audioSo;
         private AudioSource _audioSource;
-        private List<EffectAudio> _effects;
         
         private void Awake()
         {
@@ -19,24 +19,11 @@ namespace SB
             _audioSource = GetComponent<AudioSource>();
         }
 
-        private void Start()
-        {
-            _effects = GetComponentsInChildren<EffectAudio>().ToList();
-
-            foreach (var effectAudio in _effects)
-            {
-                if (effectAudio == null) continue;
-                
-                effectAudio.AddComponent<AudioSource>();
-                effectAudio.GetComponent<AudioSource>().playOnAwake = false;
-            }
-        }
-
-        public void PlayPanicEffect()
+        public void PlayEffect(int effectIndex)
         {
             if (!_audioSource.isPlaying)
             {
-                _audioSource.clip = audioSo.clips[0];
+                _audioSource.clip = audioSo.clips[effectIndex];
                 _audioSource.Play();                
             }
         }
