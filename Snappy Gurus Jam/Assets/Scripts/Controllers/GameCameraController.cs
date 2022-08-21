@@ -21,23 +21,26 @@ namespace SB
 
         private void Update()
         {
-            CameraLook();
-            var dist = Vector3.Distance(player.transform.position, _hit.point);
-
-            if (dist < camLookRadius)
+            if(this.gameObject.GetComponent<GameCameraController>().enabled == true) 
             {
-                Debug.Log("IM IN!");
-                _detected = true;
-                transform.LookAt(player.transform);
-                transform.localEulerAngles += new Vector3(-45, 180, 0);
-            }
-            else
-            {
-                Debug.Log("IM OUT!");
-            }
+                CameraLook();
+                var dist = Vector3.Distance(player.transform.position, _hit.point);
 
-            transform.localEulerAngles = new Vector3(xzRotVal.x, 
-                Mathf.PingPong(Time.time * camRotateSpeed, angleValue) + additionalAngle, xzRotVal.y);
+                if (dist < camLookRadius)
+                {
+                    Debug.Log("IM IN!");
+                    _detected = true;
+                    transform.LookAt(player.transform);
+                    transform.localEulerAngles += new Vector3(-45, 180, 0);
+                }
+                else
+                {
+                    Debug.Log("IM OUT!");
+                }
+
+                transform.localEulerAngles = new Vector3(xzRotVal.x, 
+                    Mathf.PingPong(Time.time * camRotateSpeed, angleValue) + additionalAngle, xzRotVal.y);
+            }
         }
 
         private void CameraLook()

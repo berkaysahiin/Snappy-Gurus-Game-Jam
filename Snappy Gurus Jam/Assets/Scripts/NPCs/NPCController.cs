@@ -8,9 +8,9 @@ namespace SB
 {
     public class NPCController : MonoBehaviour
     {
+        [SerializeField] private GameCameraController[] _gameCamera;
         private PlayerCharacterController _player;
         private NavMeshAgent _navMesh;
-        private GameCameraController _gameCamera;
         
         private IDecision _decisions;
 
@@ -19,14 +19,11 @@ namespace SB
             _player = FindObjectOfType<PlayerCharacterController>();
             _navMesh = GetComponent<NavMeshAgent>();
             _decisions = new NPCDecisionStates(_navMesh, _player);
-            
-            //just for test
-            _gameCamera = FindObjectOfType<GameCameraController>();
         }
 
         private void Update()
         {
-            if (_gameCamera.Detected)
+            if (GetCameraDetected() == true)
             {
                 CatchCondition(0);   
             }
@@ -35,6 +32,16 @@ namespace SB
         public void CatchCondition(int catchIndex)
         {
             _decisions.PlayerCatchConditions[catchIndex].Invoke();
+        }
+
+        private bool GetCameraDetected() 
+        {
+            foreach(var camera in _gameCamera)
+            {
+                if(camera.Detected == true) return true;
+            }
+
+            return false;
         }
     }
 }

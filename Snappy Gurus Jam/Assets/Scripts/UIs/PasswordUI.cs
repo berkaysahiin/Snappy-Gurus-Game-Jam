@@ -32,6 +32,7 @@ namespace SB
                     {
                         _inputField.enabled = false;
                         finalText.text = "Access Granted"; 
+                        
                         foreach(var camera in _gameCameraController) 
                         {
                             camera.enabled = false;
